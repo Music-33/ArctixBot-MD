@@ -2,7 +2,7 @@ import { promises } from 'fs'
 import { join } from 'path'
 import { xpRange } from '../lib/levelling.js'
 let tags = {
-  'main': '𝐋𝐎9𝐌𝐀𝐍𝐄 𝗕𝗢𝗧 𝗠𝗔𝗜𝗡',
+  'main': 'ＭＵＳＩＣ ＢＯＴ 𝗠𝗔𝗜𝗡',
   'game': 'قسم لألعاب',
   'rpg': '𝗥𝗣𝗚 𝗚𝗔𝗠𝗘𝗦',
   'xp': '𝗫𝗣 & 𝗟𝗜𝗠𝗜𝗧',
@@ -24,8 +24,8 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭─━━━❰ 𝐋𝐎9𝐌𝐀𝐍𝐄 𝐁𝐎𝐓 𝐈𝐍𝐂❱
-┃ 𝐖𝐄𝐋𝐂𝐎𝐌 𝐁𝐑𝐎 𝗧𝗢 𝐋𝐎9𝐌𝐀𝐍𝐄 𝐁𝐎𝐓
+╭─━━━❰ ＭＵＳＩＣ ＢＯＴ 𝐈𝐍𝐂❱
+┃ 𝐖𝐄𝐋𝐂𝐎𝐌 𝐁𝐑𝐎 𝗧𝗢 ＭＵＳＩＣ ＢＯＴ
 ┖━━━━━━━━━━━━━━━⦂
 
 ╭━━━━❰ 𝗨𝗦𝗘𝗥 ❱
@@ -111,7 +111,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     let header = conn.menu.header || defaultMenu.header
     let body = conn.menu.body || defaultMenu.body
     let footer = conn.menu.footer || defaultMenu.footer
-    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
+    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/212774339435${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
     let _text = [
       before,
       ...Object.keys(tags).map(tag => {
@@ -147,7 +147,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     const pp = await conn.profilePictureUrl(conn.user.jid, 'image').catch(_ => './media/arctix.jpg')
-    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://www.instagram.com/sibssssssss', 'INSTAGRAM', owner[0][0], 'OWNER', [
+    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://www.instagram.com/tgvnmusic', 'INSTAGRAM', owner[0][0], 'OWNER', [
       ['BOTGROUP', '/donasi'],
       ['SPEED', '/ping'],
       ['OWNER', '/owner']
